@@ -34,7 +34,7 @@ class RequestValidator
     public function __construct($rawRequest)
     {
         $this->rawRequest = $rawRequest;
-        $this->parsedRequest = json_decode($request);
+        $this->parsedRequest = json_decode($rawRequest);
     }
 
     /**
