@@ -1,11 +1,11 @@
 <?php
 
-namespace Thestandingsection\Core\Alexa\Response;
+namespace AmazonAlexaSkill\Response;
 
 /**
  * Class Directives
  */
 class Directives
 {
-    
+
 }

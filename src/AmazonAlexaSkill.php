@@ -1,14 +1,14 @@
 <?php
 
-namespace Thestandingsection\Core\Alexa;
+namespace AmazonAlexaSkill\Alexa;
 
-use Thestandingsection\Core\Alexa\Request\Request;
-use Thestandingsection\Core\Alexa\Response\Response;
+use AmazonAlexaSkill\Request\Request;
+use AmazonAlexaSkill\Response\Response;
 
 /**
- * Class AlexaSkill
+ * Class AmazonAmazonAlexaSkill
  */
-class AlexaSkill
+class AmazonAmazonAlexaSkill
 {
     /**
      * @var Request

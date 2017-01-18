@@ -1,5 +1,5 @@
 {
-    "name": "briward/alexa-skill",
+    "name": "briward/amazon-alexa-skill",
     "description": "A framework-agnostic wrapper for the Amazon Alexa Skills API.",
     "type": "library",
     "license": "MIT",
@@ -8,5 +8,13 @@
             "name": "Bri Ward",
             "email": "me@briward.com"
         }
-    ]
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AmazonAmazonAlexaSkill\\" : "src/"
+        }
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Thestandingsection\Core\Alexa\Response;
+namespace AmazonAlexaSkill\Response;
 
 /**
  * Class Response

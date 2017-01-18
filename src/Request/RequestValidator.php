@@ -1,6 +1,6 @@
 <?php
 
-namespace Thestandingsection\Core\Alexa\Request;
+namespace AmazonAlexaSkill\Request;
 
 /**
  * Class RequestValidator
