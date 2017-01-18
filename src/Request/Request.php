@@ -44,7 +44,7 @@ class Request
      */
     public function __construct($rawRequest)
     {
-        // $this->validateRequest();
+        $this->validateRequest();
         $this->rawRequest = $rawRequest;
         $this->parsedRequest = $this->parseRawRequest();
         $this->id = $this->parsedRequest->request->requestId;
