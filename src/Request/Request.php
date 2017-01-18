@@ -44,7 +44,7 @@ class Request
      */
     public function __construct($rawRequest)
     {
-        $this->validateRequest();
+        $this->validateRequest($rawRequest);
         $this->rawRequest = $rawRequest;
         $this->parsedRequest = $this->parseRawRequest();
         $this->id = $this->parsedRequest->request->requestId;
@@ -58,9 +58,9 @@ class Request
      *
      * @return \InvalidRequestException|null
      */
-    private function validateRequest()
+    private function validateRequest($rawRequest)
     {
-        $validator = new RequestValidator($this->rawRequest);
+        $validator = new RequestValidator($rawRequest);
         if (!$validator->validate(getenv("ALEXA_APPLICATION_ID"))) {
             throw new InvalidRequestException;
         }
