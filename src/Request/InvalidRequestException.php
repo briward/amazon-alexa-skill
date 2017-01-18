@@ -10,8 +10,8 @@ class InvalidRequestException extends \Exception
     /**
      * Constructor.
      */
-    public function __construct()
+    public function __construct($errors)
     {
-        parent::__construct("There was a problem with validation.");
+        parent::__construct("There was a problem with validation: " . json_encode($errors));
     }
 }
