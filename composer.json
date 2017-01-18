@@ -1,0 +1,12 @@
+{
+    "name": "briward/alexa-skill",
+    "description": "A framework-agnostic wrapper for the Amazon Alexa Skills API.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bri Ward",
+            "email": "me@briward.com"
+        }
+    ]
+}
