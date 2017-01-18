@@ -110,6 +110,7 @@ class RequestValidator
      */
     private function checkSignatureUrlPathIsValid()
     {
+        $url = parse_url($_SERVER['HTTP_SIGNATURECERTCHAINURL']);
         if (strpos($url['path'], '/echo.api/') !== 0) {
             $this->errors[] = 'The URL path in the signature header is invalid';
             return false;
@@ -122,6 +123,7 @@ class RequestValidator
      */
     private function checkSignatureUrlIsHttps()
     {
+        $url = parse_url($_SERVER['HTTP_SIGNATURECERTCHAINURL']);
         if (strcasecmp($url['scheme'], 'https') != 0) {
             $this->errors[] = 'The URL in the signature header is not using HTTPS';
             return false;
@@ -134,6 +136,7 @@ class RequestValidator
      */
     private function checkSignatureUrlIsCorrectPort()
     {
+        $url = parse_url($_SERVER['HTTP_SIGNATURECERTCHAINURL']);
         if (array_key_exists('port', $url) && $url['port'] != '443') {
             $this->errors[] = 'The URL in the signature header is not using the correct port';
             return false;
@@ -195,6 +198,7 @@ class RequestValidator
      */
     private function checkCertificateParsesCorrectly()
     {
+        $pem = file_get_contents($_SERVER['HTTP_SIGNATURECERTCHAINURL']);
         $cert = openssl_x509_parse($pem);
         if (!$cert) {
             $this->errors[] = 'x509 parsing failed';
@@ -208,6 +212,8 @@ class RequestValidator
      */
     private function checkSubjectAltNameIsValid()
     {
+        $pem = file_get_contents($_SERVER['HTTP_SIGNATURECERTCHAINURL']);
+        $cert = openssl_x509_parse($pem);
         if( strpos($cert['extensions']['subjectAltName'], 'echo-api.amazon.com') === false) {
             $this->errors[] = 'subjectAltName is invalid';
             return false;
