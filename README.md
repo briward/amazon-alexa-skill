@@ -2,6 +2,8 @@
 
 A framework-agnostic wrapper for the Amazon Alexa Skills API written in PHP.
 
+_Not ready for public use._
+
 ## Usage
 
 Install via composer:
