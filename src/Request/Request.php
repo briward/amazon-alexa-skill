@@ -60,7 +60,7 @@ class Request
      */
     private function validateRequest()
     {
-        $validator = new RequestValidator($rawRequest);
+        $validator = new RequestValidator($this->rawRequest);
         if (!$validator->validate(getenv("ALEXA_APPLICATION_ID"))) {
             throw new InvalidRequestException;
         }
