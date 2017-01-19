@@ -79,4 +79,14 @@ class Request
         }
         return $parsedRequest;
     }
+
+    /**
+     * Get the intent of the request.
+     *
+     * @return stdClass
+     */
+    public function getIntent()
+    {
+        return $this->intent;
+    }
 }
