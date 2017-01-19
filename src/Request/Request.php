@@ -25,6 +25,11 @@ class Request
     /**
      * @var string
      */
+    private $type;
+
+    /**
+     * @var string
+     */
     private $locale;
 
     /**
@@ -48,6 +53,7 @@ class Request
         $this->rawRequest = $rawRequest;
         $this->parsedRequest = $this->parseRawRequest();
         $this->id = $this->parsedRequest->request->requestId;
+        $this->type = $this->parsedRequest->request->type;
         $this->locale = $this->parsedRequest->request->locale;
         $this->timestamp = $this->parsedRequest->request->timestamp;
         $this->intent = $this->parsedRequest->request->intent;
@@ -88,5 +94,15 @@ class Request
     public function getIntent()
     {
         return $this->intent;
+    }
+
+    /**
+     * Get the type of request.
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }
