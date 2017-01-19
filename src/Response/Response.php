@@ -49,7 +49,7 @@ class Response
      */
     public function withOutputSpeech($type, $text = "", $ssml = "")
     {
-        $this->outputSpeech = new OutputSpeech($type, $text, $ssml);
+        $this->outputSpeech = new OutputSpeech($type, $text);
         return $this;
     }
 

@@ -11,10 +11,10 @@ class OutputSpeech
     public $text;
     public $ssml;
 
-    public function __construct($type, $text, $ssml)
+    public function __construct($type, $text)
     {
         $this->type = $type;
         $this->text = $text;
-        $this->ssml = $ssml;
+        $this->ssml = $text;
     }
 }
