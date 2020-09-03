@@ -34,5 +34,3 @@ $alexa->handleRequest(function(AmazonAlexaSkill $alexa, Request $request) {
 
 return json_encode($alexa->getResponse());
 ```
-
-_Tests to come!_
